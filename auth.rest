@@ -1,0 +1,18 @@
+### SIGN UP Register user 
+POST http://localhost:3000/auth/sign-up
+Content-Type: application/json
+
+{
+    "name": "slavad",
+    "username": "ddddd",
+    "password": "222"
+}
+
+### SIGN IN Get token
+POST http://localhost:3000/auth/sign-in 
+Content-Type: application/json
+
+{
+    "username": "ddddd",
+    "password": "222"
+}
