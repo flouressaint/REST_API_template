@@ -29,3 +29,7 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/lists
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAyNjc5NjIsImlhdCI6MTcwMDIyNDc2MiwidXNlcl9pZCI6NX0.9aErF88Z6Rxbqp5FgO3MWQCsF2uXPOSvDUfNkMfFwb4
+
+###
+GET http://localhost:3000/api/lists/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAyNjc5NjIsImlhdCI6MTcwMDIyNDc2MiwidXNlcl9pZCI6NX0.9aErF88Z6Rxbqp5FgO3MWQCsF2uXPOSvDUfNkMfFwb4

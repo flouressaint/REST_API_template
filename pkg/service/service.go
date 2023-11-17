@@ -14,6 +14,7 @@ type Authorization interface {
 type TodoList interface {
 	Create(userId int, list REST_API.TodoList) (int, error)
 	GetAll(userId int) ([]REST_API.TodoList, error)
+	GetById(userId, listId int) (REST_API.TodoList, error)
 }
 
 type TodoItem interface {
