@@ -19,7 +19,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/api/lists
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAyNjc5NjIsImlhdCI6MTcwMDIyNDc2MiwidXNlcl9pZCI6NX0.9aErF88Z6Rxbqp5FgO3MWQCsF2uXPOSvDUfNkMfFwb4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAzMzkwODQsImlhdCI6MTcwMDI5NTg4NCwidXNlcl9pZCI6NX0.ZwZ912kQ6B1KsgKUcR4vMBUMnIMtaNftcLIdet7xglo
 Content-Type: application/json
 
 {
@@ -28,8 +28,12 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/lists
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAyNjc5NjIsImlhdCI6MTcwMDIyNDc2MiwidXNlcl9pZCI6NX0.9aErF88Z6Rxbqp5FgO3MWQCsF2uXPOSvDUfNkMfFwb4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAzMzkwODQsImlhdCI6MTcwMDI5NTg4NCwidXNlcl9pZCI6NX0.ZwZ912kQ6B1KsgKUcR4vMBUMnIMtaNftcLIdet7xglo
 
 ###
 GET http://localhost:3000/api/lists/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAyNjc5NjIsImlhdCI6MTcwMDIyNDc2MiwidXNlcl9pZCI6NX0.9aErF88Z6Rxbqp5FgO3MWQCsF2uXPOSvDUfNkMfFwb4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAzMzkwODQsImlhdCI6MTcwMDI5NTg4NCwidXNlcl9pZCI6NX0.ZwZ912kQ6B1KsgKUcR4vMBUMnIMtaNftcLIdet7xglo
+
+### 
+DELETE http://localhost:3000/api/lists/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAzMzkwODQsImlhdCI6MTcwMDI5NTg4NCwidXNlcl9pZCI6NX0.ZwZ912kQ6B1KsgKUcR4vMBUMnIMtaNftcLIdet7xglo
