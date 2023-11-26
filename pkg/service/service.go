@@ -16,6 +16,7 @@ type TodoList interface {
 	GetAll(userId int) ([]REST_API.TodoList, error)
 	GetById(userId, listId int) (REST_API.TodoList, error)
 	Delete(userId, listId int) error
+	Update(userId, listId int, input REST_API.UpdateListInput) error
 }
 
 type TodoItem interface {

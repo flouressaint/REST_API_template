@@ -3,8 +3,8 @@ POST http://localhost:3000/auth/sign-up
 Content-Type: application/json
 
 {
-    "name": "slavad",
-    "username": "ddddd",
+    "name": "mm",
+    "username": "Maxxxx",
     "password": "222"
 }
 
@@ -13,13 +13,13 @@ POST http://localhost:3000/auth/sign-in
 Content-Type: application/json
 
 {
-    "username": "ddddd",
+    "username": "Maxxxx",
     "password": "222"
 }
 
 ###
 POST http://localhost:3000/api/lists
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAzMzkwODQsImlhdCI6MTcwMDI5NTg4NCwidXNlcl9pZCI6NX0.ZwZ912kQ6B1KsgKUcR4vMBUMnIMtaNftcLIdet7xglo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDA0Nzc0NzQsImlhdCI6MTcwMDQzNDI3NCwidXNlcl9pZCI6N30.wb_R3usbp2CKvGXPX7PEjcC24O1b198EBbMcgooNhGg
 Content-Type: application/json
 
 {
@@ -28,12 +28,19 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/lists
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAzMzkwODQsImlhdCI6MTcwMDI5NTg4NCwidXNlcl9pZCI6NX0.ZwZ912kQ6B1KsgKUcR4vMBUMnIMtaNftcLIdet7xglo
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDA0Nzc0NzQsImlhdCI6MTcwMDQzNDI3NCwidXNlcl9pZCI6N30.wb_R3usbp2CKvGXPX7PEjcC24O1b198EBbMcgooNhGg
 ###
 GET http://localhost:3000/api/lists/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAzMzkwODQsImlhdCI6MTcwMDI5NTg4NCwidXNlcl9pZCI6NX0.ZwZ912kQ6B1KsgKUcR4vMBUMnIMtaNftcLIdet7xglo
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDA0Nzc0NzQsImlhdCI6MTcwMDQzNDI3NCwidXNlcl9pZCI6N30.wb_R3usbp2CKvGXPX7PEjcC24O1b198EBbMcgooNhGg
 ### 
 DELETE http://localhost:3000/api/lists/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAzMzkwODQsImlhdCI6MTcwMDI5NTg4NCwidXNlcl9pZCI6NX0.ZwZ912kQ6B1KsgKUcR4vMBUMnIMtaNftcLIdet7xglo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDA0Nzc0NzQsImlhdCI6MTcwMDQzNDI3NCwidXNlcl9pZCI6N30.wb_R3usbp2CKvGXPX7PEjcC24O1b198EBbMcgooNhGg
+###
+PUT http://localhost:3000/api/lists/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDA0Nzc0NzQsImlhdCI6MTcwMDQzNDI3NCwidXNlcl9pZCI6N30.wb_R3usbp2CKvGXPX7PEjcC24O1b198EBbMcgooNhGg
+Content-Type: application/json
+
+{
+    "title": "Измененная таска",
+    "description": "Описание изм"
+}
