@@ -11,6 +11,7 @@ import (
 const (
 	authorizationHeader = "Authorization"
 	userCtx             = "userId"
+	listCtx             = "listId"
 )
 
 func (h *Handler) userIdentity(c *gin.Context) {
@@ -46,6 +47,22 @@ func getUserId(c *gin.Context) (int, error) {
 	if !ok {
 		newErrorResponse(c, http.StatusInternalServerError, "user id is of invalid type")
 		return 0, errors.New("user id is of invalid type")
+	}
+
+	return idInt, nil
+}
+
+func getListId(c *gin.Context) (int, error) {
+	id, ok := c.Get(listCtx)
+	if !ok {
+		newErrorResponse(c, http.StatusInternalServerError, "list id not found")
+		return 0, errors.New("list id not found")
+	}
+
+	idInt, ok := id.(int)
+	if !ok {
+		newErrorResponse(c, http.StatusInternalServerError, "list id is of invalid type")
+		return 0, errors.New("list id is of invalid type")
 	}
 
 	return idInt, nil

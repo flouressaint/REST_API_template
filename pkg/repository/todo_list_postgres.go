@@ -23,27 +23,38 @@ func (r *TodoListPostgres) Create(userId int, list REST_API.TodoList) (int, erro
 		return 0, err
 	}
 
-	var id int
-	createListQuery := fmt.Sprintf("INSERT INTO %s (title, description) VALUES ($1, $2) RETURNING id", todoListsTable)
+	var listId int
+	createListQuery := fmt.Sprintf(
+		`INSERT INTO %s (title, description) VALUES ($1, $2) RETURNING id`,
+		todoListsTable,
+	)
 	row := tx.QueryRow(createListQuery, list.Title, list.Description)
-	if err := row.Scan(&id); err != nil {
+	if err := row.Scan(&listId); err != nil {
+		tx.Rollback()
 		return 0, err
 	}
-	createUsersListQuery := fmt.Sprintf("INSERT INTO %s (user_id, list_id) VALUES ($1, $2)", usersListsTable)
-	_, err = tx.Exec(createUsersListQuery, userId, id)
+	createUsersListQuery := fmt.Sprintf(
+		`INSERT INTO %s (user_id, list_id) VALUES ($1, $2)`,
+		usersListsTable,
+	)
+	_, err = tx.Exec(createUsersListQuery, userId, listId)
 	if err != nil {
 		tx.Rollback()
 		return 0, err
 	}
 
-	return id, tx.Commit()
+	return listId, tx.Commit()
 }
 
 func (r *TodoListPostgres) GetAll(userId int) ([]REST_API.TodoList, error) {
 	var lists []REST_API.TodoList
 
-	query := fmt.Sprintf("SELECT tl.id, tl.title, tl.description FROM %s tl INNER JOIN %s ul ON tl.id = ul.list_id WHERE ul.user_id = $1",
-		todoListsTable, usersListsTable)
+	query := fmt.Sprintf(`SELECT tl.id, tl.title, tl.description FROM %s tl 
+							INNER JOIN %s ul ON tl.id = ul.list_id 
+							WHERE ul.user_id = $1`,
+		todoListsTable,
+		usersListsTable,
+	)
 	err := r.db.Select(&lists, query, userId)
 
 	return lists, err
