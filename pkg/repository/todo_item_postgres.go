@@ -44,3 +44,17 @@ func (r *TodoItemPostgres) Create(listId int, item REST_API.TodoItem) (int, erro
 
 	return itemId, tx.Commit()
 }
+
+func (r *TodoItemPostgres) GetAll(listId int) ([]REST_API.TodoItem, error) {
+	var items []REST_API.TodoItem
+
+	query := fmt.Sprintf(`SELECT ti.id, ti.title, ti.description, ti.done FROM %s ti 
+							INNER JOIN %s li ON li.id = li.list_id 
+							WHERE li.list_id = $1`,
+		todoItemsTable,
+		listsItemsTable,
+	)
+	err := r.db.Select(&items, query, listId)
+
+	return items, err
+}
