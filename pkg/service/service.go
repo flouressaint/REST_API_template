@@ -22,6 +22,9 @@ type TodoList interface {
 type TodoItem interface {
 	Create(userId, listId int, item REST_API.TodoItem) (int, error)
 	GetAll(userId, listId int) ([]REST_API.TodoItem, error)
+	GetById(userId, itemId int) (REST_API.TodoItem, error)
+	Delete(userId, itemId int) error
+	Update(userId, itemId int, input REST_API.UpdateItemInput) error
 }
 
 type Service struct {
